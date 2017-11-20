@@ -1,7 +1,12 @@
-﻿using System;
+﻿using Cotizacion.Core.Concretes;
+using Cotizacion.Core.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Dependencies;
+using Unity;
+using Unity.Lifetime;
 
 namespace Cotizacion.WebApi
 {
@@ -19,6 +24,9 @@ namespace Cotizacion.WebApi
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            UnityConfig.RegisterComponents();
         }
     }
+    
 }
