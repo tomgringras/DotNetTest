@@ -6,11 +6,11 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{69258832-EF36-4150-B2BC-CF91F1F50C09}</ProjectGuid>
+    <ProjectGuid>{FA9BB808-713D-4B83-97E5-1F83DF5A5125}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Cotizacion.WebApi.Tests</RootNamespace>
-    <AssemblyName>Cotizacion.WebApi.Tests</AssemblyName>
+    <RootNamespace>Usuarios.WebApi.Tests</RootNamespace>
+    <AssemblyName>Usuarios.WebApi.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -33,6 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <Private>False</Private>
@@ -93,7 +101,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\CotizacionControllerTest.cs" />
+    <Compile Include="Controllers\UsuarioSQLServiceTest.cs" />
+    <Compile Include="Controllers\UsuariosControllerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -103,13 +112,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Cotizacion.Core\Cotizacion.Core.csproj">
-      <Project>{7A7D13C8-B6FB-43DD-A7B2-8774B5B57651}</Project>
-      <Name>Cotizacion.Core</Name>
+    <ProjectReference Include="..\Usuarios.Core\Usuarios.Core.csproj">
+      <Project>{8467D94F-22ED-4328-A264-3C056EEF8BA3}</Project>
+      <Name>Usuarios.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Cotizacion.WebApi\Cotizacion.WebApi.csproj">
-      <Project>{0D2081E6-1D54-4016-BE6A-7AE5B2DF9FB3}</Project>
-      <Name>Cotizacion.WebApi</Name>
+    <ProjectReference Include="..\Usuarios.WebApi\Usuarios.WebApi.csproj">
+      <Project>{B6B269F0-03FF-4656-A603-72BA6FE5A6FD}</Project>
+      <Name>Usuarios.WebApi</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
