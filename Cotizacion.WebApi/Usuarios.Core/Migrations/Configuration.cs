@@ -6,14 +6,14 @@ namespace Usuarios.Core.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Usuarios.Core.Model.UsuariosContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Usuarios.Core.Model.UsuariosDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(Usuarios.Core.Model.UsuariosContext context)
+        protected override void Seed(Usuarios.Core.Model.UsuariosDbContext context)
         {
             context.Usuarios.AddOrUpdate(new Usuario()
             {

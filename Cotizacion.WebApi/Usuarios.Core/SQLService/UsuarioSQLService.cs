@@ -11,7 +11,7 @@ namespace Usuarios.Core.SQLService
     {
         public static IEnumerable<Usuario> GetAll()
         {
-            using (UsuariosContext db = new UsuariosContext())
+            using (UsuariosDbContext db = new UsuariosDbContext())
             {
                 return db.Usuarios.ToList();
             }
@@ -19,7 +19,7 @@ namespace Usuarios.Core.SQLService
 
         public static Usuario GetById(Guid guid)
         {
-            using (UsuariosContext db = new UsuariosContext())
+            using (UsuariosDbContext db = new UsuariosDbContext())
             {
                 return db.Usuarios.Find(guid);
             }
@@ -27,7 +27,7 @@ namespace Usuarios.Core.SQLService
 
         public static Guid Insert(Usuario usuario)
         {
-            using (UsuariosContext db = new UsuariosContext())
+            using (UsuariosDbContext db = new UsuariosDbContext())
             {
                 if (usuario.UsuarioId.Equals(Guid.Empty))
                     usuario.UsuarioId = Guid.NewGuid();
@@ -41,7 +41,7 @@ namespace Usuarios.Core.SQLService
 
         public static void Update(Usuario usuario)
         {
-            using (UsuariosContext db = new UsuariosContext())
+            using (UsuariosDbContext db = new UsuariosDbContext())
             {
                 db.Entry(usuario).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
@@ -50,7 +50,7 @@ namespace Usuarios.Core.SQLService
 
         public static void DeleteById(Guid id)
         {
-            using (UsuariosContext db = new UsuariosContext())
+            using (UsuariosDbContext db = new UsuariosDbContext())
             {
                 var toBeDeleted = db.Usuarios.Find(id);
                 db.Usuarios.Remove(toBeDeleted);
